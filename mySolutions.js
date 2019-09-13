@@ -130,4 +130,10 @@ const videoData = [
     }
 ];
 
-_.filter(videoData, (item)=>{return item.present});
+var suspectObjects= _.filter(videoData, (item)=>{return item.present});
+
+//==============filter then map to return an array of names==========================================//
+var suspectNames =_.map(_.filter(videoData, (item)=>{return item.present}),(item)=>
+{
+    return item.name
+});
