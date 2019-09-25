@@ -20,3 +20,32 @@ let printFavoriteBooks = () => {
 };
 
 printFavoriteBooks(); 
+//===================================
+class Bookshelf{
+   constructor(){
+      this.favoriteBooks = [];
+   }
+
+   addFavoriteBook (bookName){
+      var lowerBookName = String(bookName.toLowerCase());
+      if(!lowerBookName.includes("great")) {
+         this.favoriteBooks.push(bookName);
+      }
+   }
+
+   printFavoriteBooks(){
+      console.log(`Favorite Books:`)
+      this.favoriteBooks.forEach(element => {
+         console.log(element);
+      });
+   };
+} 
+
+let myBookShelf = new Bookshelf();
+
+myBookShelf.addFavoriteBook("A Song of Ice and Fire");
+myBookShelf.addFavoriteBook("The Great Gatsby");
+myBookShelf.addFavoriteBook("Crime & Punishment");
+myBookShelf.addFavoriteBook("Great Expectations");
+myBookShelf.addFavoriteBook("You Don't Know JS");
+myBookShelf.printFavoriteBooks(); 
